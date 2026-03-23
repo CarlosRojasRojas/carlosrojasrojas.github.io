@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+
+const pageTitle = 'About | My Portfolio';
+---
+
+<Layout title={pageTitle} currentPath="/about">
+	<Hero 
+		title="About Me" 
+		subtitle="Industrial Civil Engineer | Product Manager & Tech Team Lead"
+	/>
+
+	<section class="about-section">
+		<div class="container">
+			<div class="about-content">
+				<h2>My Story</h2>
+				<p>
+					Industrial Civil Engineer in Computer Science from Pontifical Catholic University of Chile with 15+ years of professional experience. Started my career as a Web Development Lead and evolved into technical leadership roles spanning game development, data analytics, and product management. Currently serving as LiveOps Product Manager at Playstudios Chile, managing operations for Tetris Mobile App.
+				</p>
+
+				<h2>What I Do</h2>
+				<p>
+					I specialize in Live Operations management, game analytics, and building scalable systems. My background spans full-stack development, machine learning, data infrastructure, and team leadership. I've led teams ranging from 2 to 12+ people, managing analytical projects and software development across gaming, fintech, and enterprise sectors.
+				</p>
+
+				<h2>My Expertise</h2>
+				<ul>
+					<li><strong>LiveOps & Product Management:</strong> Content planning, A/B testing, feature proposals, and economy tuning for mobile games</li>
+					<li><strong>Data Analytics:</strong> BI reporting, ETL pipelines, Big Query, Tableau, and revenue analytics</li>
+					<li><strong>Team Leadership:</strong> Scrum, Agile, SAFe methodologies with proven track record managing cross-functional teams</li>
+					<li><strong>Software Development:</strong> Full-stack development with C#/.NET, Python, JavaScript/React, and cloud-based solutions</li>
+					<li><strong>Machine Learning:</strong> AI research, chatbot development, and predictive analytics for financial services</li>
+				</ul>
+
+				<h2>Professional Highlights</h2>
+				<p>
+					Passionate about solving complex problems with data-driven insights. Proven ability to architect and deliver large-scale projects including the KPMG Datax tax system, NBA Clash game analytics, and BCI Bank's first financial chatbot. Fluent in Spanish and English (TOEIC 840 - C2 level). Certified in Azure AZ900 and Google Cloud Digital Leader.
+				</p>
+
+				<h2>Languages & Certifications</h2>
+				<ul>
+					<li><strong>Languages:</strong> Spanish (Native), English (TOEIC 840 - C2 Level)</li>
+					<li><strong>Certifications:</strong> Azure AZ900, Google Cloud Digital Leader</li>
+					<li><strong>Education:</strong> Pontifical Catholic University of Chile - Industrial Civil Engineer in Computer Science (2008)</li>
+				</ul>
+
+				<h2>Let's Connect</h2>
+				<p>
+					I'm open to collaborating on challenging projects, consulting opportunities, or discussing technology trends in gaming, analytics, and product management. Feel free to reach out!
+				</p>
+				<div class="contact-links">
+					<a href="mailto:carlosrojasr@gmail.com" class="contact-btn">Email Me</a>
+					<a href="https://www.linkedin.com/in/CarlosRojasRojas" class="contact-btn" target="_blank">LinkedIn</a>
+					<a href="tel:+56913915295" class="contact-btn">Call Me</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.about-section {
+		padding: 4rem 2rem;
+	}
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.about-content h2 {
+		font-size: 1.75rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		color: #1f2937;
+	}
+
+	.about-content h2:first-child {
+		margin-top: 0;
+	}
+
+	.about-content h2::after {
+		content: '';
+		display: block;
+		width: 60px;
+		height: 3px;
+		background: linear-gradient(90deg, #667eea, #764ba2);
+		margin-top: 0.5rem;
+	}
+
+	.about-content p {
+		font-size: 1.05rem;
+		line-height: 1.8;
+		color: #4b5563;
+		margin-bottom: 1.5rem;
+	}
+
+	.about-content ul {
+		list-style: none;
+		padding: 0;
+		margin: 1.5rem 0;
+	}
+
+	.about-content li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		color: #4b5563;
+		line-height: 1.6;
+	}
+
+	.about-content li:before {
+		content: '▸';
+		color: #667eea;
+		position: absolute;
+		left: 0;
+		font-weight: bold;
+		font-size: 1.25rem;
+	}
+
+	.contact-links {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.contact-btn {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		padding: 0.75rem 1.5rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: transform 0.3s, box-shadow 0.3s;
+		display: inline-block;
+	}
+
+	.contact-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+	}
+
+	@media (max-width: 768px) {
+		.about-section {
+			padding: 2rem 1rem;
+		}
+
+		.about-content h2 {
+			font-size: 1.5rem;
+		}
+
+		.contact-links {
+			flex-direction: column;
+		}
+
+		.contact-btn {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>

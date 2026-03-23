@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlogCard from '../components/BlogCard.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const pageTitle = 'Blog | My Portfolio';
+---
+
+<Layout title={pageTitle} currentPath="/blog">
+	<section class="hero-small">
+		<div class="hero-content">
+			<h1>Blog</h1>
+			<p>Thoughts, tutorials, and insights about web development</p>
+		</div>
+	</section>
+
+	<section class="blog-section">
+		<div class="container">
+			{posts.length === 0 ? (
+				<div class="no-posts">
+					<p>No blog posts yet. Check back soon!</p>
+				</div>
+			) : (
+				<div class="blog-grid">
+					{posts.map(post => (
+						<BlogCard 
+							title={post.data.title}
+							description={post.data.description}
+							pubDate={post.data.pubDate}
+							slug={post.slug}
+							author={post.data.author}
+							tags={post.data.tags}
+						/>
+					))}
+				</div>
+			)}
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero-small {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		padding: 3rem 2rem;
+		text-align: center;
+	}
+
+	.hero-content h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.hero-content p {
+		font-size: 1.1rem;
+		opacity: 0.95;
+	}
+
+	.blog-section {
+		padding: 4rem 2rem;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.blog-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.no-posts {
+		text-align: center;
+		padding: 3rem;
+		color: #6b7280;
+		font-size: 1.1rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero-small {
+			padding: 2rem 1rem;
+		}
+
+		.hero-content h1 {
+			font-size: 1.75rem;
+		}
+
+		.blog-section {
+			padding: 2rem 1rem;
+		}
+
+		.blog-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
