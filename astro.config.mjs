@@ -5,4 +5,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	integrations: [],
     site: 'https://carlosrojasrojas.github.io',
+    base: '/carlosrojasrojas.github.io',
 });
