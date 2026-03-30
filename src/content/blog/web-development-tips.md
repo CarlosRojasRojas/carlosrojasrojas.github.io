@@ -4,6 +4,7 @@ description: Practical guide to setting up analytics infrastructure and using da
 pubDate: 2025-01-10
 author: Carlos Rojas
 tags: [analytics, data-science, game-development, big-query]
+slug: web-development-tips
 ---
 
 # Game Analytics - Data-Driven Decision Making

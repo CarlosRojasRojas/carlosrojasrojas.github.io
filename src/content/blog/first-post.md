@@ -1,9 +1,10 @@
 ---
 title: LiveOps Fundamentals - Building Sustainable Mobile Games
 description: A comprehensive guide to Live Operations strategy, monetization, and player engagement in mobile gaming.
-pubDate: 2025-01-15
+pubDate: 2025-04-15
 author: Carlos Rojas
 tags: [liveops, game-development, mobile-games, monetization]
+slug: first-post
 ---
 
 # LiveOps Fundamentals - Building Sustainable Mobile Games

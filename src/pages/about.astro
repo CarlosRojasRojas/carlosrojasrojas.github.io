@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import HeroImage from '../components/HeroImage.astro';
 
 const pageTitle = 'About | My Portfolio';
 ---
 
 <Layout title={pageTitle} currentPath="/about">
-	<Hero 
+    
+	<HeroImage
 		title="About Me" 
 		subtitle="Industrial Civil Engineer | Product Manager & Tech Team Lead"
 	/>
@@ -16,7 +18,9 @@ const pageTitle = 'About | My Portfolio';
 			<div class="about-content">
 				<h2>My Story</h2>
 				<p>
-					Industrial Civil Engineer in Computer Science from Pontifical Catholic University of Chile with 15+ years of professional experience. Started my career as a Web Development Lead and evolved into technical leadership roles spanning game development, data analytics, and product management. Currently serving as LiveOps Product Manager at Playstudios Chile, managing operations for Tetris Mobile App.
+					Industrial Civil Engineer in Computer Science from Pontifical Catholic University of Chile with 15+ years of professional experience.
+                    Started my career as a Web Development Lead and evolved into technical leadership roles spanning game development, data analytics, and product management.</br></br>
+                    My last job was serving as LiveOps Product Manager at Playstudios Chile, managing operations for Tetris Mobile App.
 				</p>
 
 				<h2>What I Do</h2>
@@ -60,6 +64,7 @@ const pageTitle = 'About | My Portfolio';
 </Layout>
 
 <style>
+	
 	.about-section {
 		padding: 4rem 2rem;
 	}

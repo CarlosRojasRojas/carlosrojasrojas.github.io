@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import HeroImage from '../components/HeroImage.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 
 const pageTitle = 'Home | My Portfolio';
 ---
 
 <Layout title={pageTitle} currentPath="/">
-	<Hero 
-		title="Carlos Ernesto Rojas Rojas" 
+
+	<HeroImage 
+		title="Carlos Rojas Rojas" 
 		subtitle="Project Manager | Senior Data Analyst | Game Product Manager"
 		ctaText="View My Work"
 		ctaLink="#experience"
@@ -40,7 +42,7 @@ const pageTitle = 'Home | My Portfolio';
 						"Worked with Marketing to coordinate social campaigns"
 					]}
 					images={[
-					{ url: "src/assets/Images/TetrisIcon.jpeg", alt: "Tetris Mobile", link: "https://playstudios.com" },
+					{ url: "Images/TetrisIcon.jpeg", alt: "Tetris Mobile", link: "https://www.playstudios.com/tetris/" },
 					{ url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=150&h=150&fit=crop", alt: "Mobile App", link: "https://play.google.com/store/apps/details?id=com.playstudios.tetris" },
 					{ url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=150&fit=crop", alt: "Analytics Dashboard", link: "https://analytics.google.com" },
 					{ url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=150&h=150&fit=crop", alt: "Team Collaboration", link: "#" }
@@ -57,7 +59,7 @@ const pageTitle = 'Home | My Portfolio';
 						"Content production and features for AEW Figure Fighters"
 					]}
 					images={[
-						{ url: "Images/NBAClashIcon.png", alt: "NBA Clash", link: "https://www.youtube.com/watch?v=UFlPVdTDWwk" },
+						{ url: "Images/nbaClashIcon.png", alt: "NBA Clash", link: "https://www.youtube.com/watch?v=UFlPVdTDWwk" },
 						{ url: "Images/LandOfGoalsIcon.jpeg", alt: "LaLiga Land of Goals", link: "https://globant.com/games" },
 						{ url: "Images/AEWFFLogo.jpg", alt: "AEW Figure Fighters", link: "https://globant.com" }
 					]}

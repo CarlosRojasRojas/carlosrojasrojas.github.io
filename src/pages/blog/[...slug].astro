@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map(post => ({
-		params: { slug: post.slug },
+		params: { slug: post.slug || post.data.slug },
 		props: { post },
 	}));
 }
@@ -15,7 +15,6 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
 
 const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
 	year: 'numeric',
@@ -44,7 +43,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
 		</div>
 
 		<div class="post-content container">
-			<Content />
+			<div set:html={post.rendered.html} />
 		</div>
 
 		<div class="post-footer">
