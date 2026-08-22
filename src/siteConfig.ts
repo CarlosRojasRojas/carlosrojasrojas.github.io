@@ -1,8 +1,8 @@
 // Personal Portfolio Configuration
 export const siteConfig = {
 	name: "Carlos Ernesto Rojas Rojas",
-	title: "Industrial Civil Engineer | Product Manager | Tech Team Lead",
-	description: "Project Manager and Tech Team Lead with 15+ years of experience in analytical projects and software development",
+	title: "Industrial Civil Engineer | Product Manager | Tech Lead",
+	description: "Game Project Manager and Tech Lead with 15+ years of experience in software development for analytical projects and game industry projects.",
 	email: "carlosrojasr@gmail.com",
 	phone: "+56 9 91391295",
 	location: "La Ciénaga 12211, Lo Barnechea, Santiago, Chile",
@@ -36,7 +36,7 @@ export const siteConfig = {
 	// Technical Skills
 	skills: {
 		dataAnalysis: ["Python", "R", "Tableau", "Google Big Query", "Hadoop", "Spark"],
-		development: ["C# / .NET", "NodeJS", "React", "Angular", "Django", "Git", "SVN"],
+		development: ["C# / .NET", "NodeJS", "React", "Angular", "Django", "Git", "SVN", "Java"],
 		databases: ["SQL Server", "Oracle", "PostgreSQL", "MongoDB", "DocumentDB", "HBase"],
 		methodologies: ["Scrum", "Agile", "SAFe"],
 		cloud: ["Azure", "Google Cloud", "AWS", "Hadoop Data Lake"],
