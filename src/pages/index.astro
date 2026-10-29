@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import HeroImage from '../components/HeroImage.astro';
+import HeroNew from '../components/HeroNew.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
+import { siteConfig } from '../siteConfig';
+
 import nbaClashGameplay from '../assets/Images/nba-clash-gameplay.jpeg';
 import nbaClashGameplayTwo from '../assets/Images/nba-clash-gameplay-2.jpeg';
 import royalDefendersBanner from '../assets/Images/royal-defenders-banner.jpg';
@@ -11,296 +12,986 @@ import bloodBrothersGameplay from '../assets/Images/bb2-gameplay.jpeg';
 import bloodBrothersIcon from '../assets/Images/bb2-icon.jpeg';
 import starWarsGameplay from '../assets/Images/sw-galactic-defense-gameplay.jpeg';
 import starWarsIcon from '../assets/Images/sw-galactic-defense-icon.jpg';
+import tetrisSpaceInvaders from '../assets/Images/tetris-space-invaders.jpeg';
+import tetrisXmasSeason from '../assets/Images/tetris-xmas-season.jpeg';
 
-const pageTitle = 'Home | My Portfolio';
+const pageTitle = 'Carlos Rojas Rojas | Product Manager & Senior Tech Lead';
+
+const featuredProjects = [
+  {
+    title: "Tetris® Mobile",
+    role: "LiveOps Product Manager",
+    company: "Playstudios Chile",
+    tagline: "Live operations, content cadencing, and A/B test experiments for the iconic puzzle franchise.",
+    metric: "ARPU Uplift",
+    image: "/Images/TetrisIcon.jpeg",
+    gameplay: tetrisSpaceInvaders.src,
+    link: "/games#tetris-mobile",
+    tags: ["LiveOps", "A/B Testing", "Economy Tuning", "Mobile Game"]
+  },
+  {
+    title: "NBA Clash",
+    role: "Senior Game Producer",
+    company: "Globant",
+    tagline: "Roadmap ownership, content planning, and conversion optimization for licensed sports action.",
+    metric: "Full Roadmap Ownership",
+    image: "/Images/nbaClashIcon.png",
+    gameplay: nbaClashGameplay.src,
+    link: "/games#nba-clash",
+    tags: ["Sports Game", "Content Roadmap", "Player Retention"]
+  },
+  {
+    title: "Star Wars™ Galactic Defense",
+    role: "Game Analytics & Design Director",
+    company: "DeNA Santiago",
+    tagline: "Led 12-person analytics and game design team, establishing LiveOps studio capabilities.",
+    metric: "12-Person Team Led",
+    image: starWarsIcon.src,
+    gameplay: starWarsGameplay.src,
+    link: "/games#star-wars-galactic-defense",
+    tags: ["Director", "BigQuery BI", "LiveOps Capabilities"]
+  },
+  {
+    title: "AEW Figure Fighters",
+    role: "Live Content Producer",
+    company: "Globant",
+    tagline: "Live content production, feature delivery, and moveset progression for a licensed collectible RPG.",
+    metric: "Economy & Character Curves",
+    image: "/Images/AEWFFLogo.jpg",
+    gameplay: "/Images/AEWFF_gameplay.jpg",
+    link: "/games#aew-figure-fighters",
+    tags: ["Live Content", "Character Design", "Mobile RPG"]
+  }
+];
+
+const pillars = [
+  {
+    icon: "🎯",
+    title: "LiveOps & Monetization",
+    description: "Architecting sustainable in-game economies, event cadence schedules, and conversion funnels that boost lifetime value without sacrificing player experience."
+  },
+  {
+    icon: "📊",
+    title: "Analytical Rigor & Data Science",
+    description: "Designing rigorous A/B experiments, ETL pipelines, and BI dashboards with Google BigQuery, SQL, and Tableau to guide high-stakes product decisions."
+  },
+  {
+    icon: "🚀",
+    title: "High-Performance Leadership",
+    description: "15+ years managing cross-functional squads of engineers, game designers, and analysts under Scrum, SAFe, and Agile to ship on time and on budget."
+  }
+];
 ---
 
 <Layout title={pageTitle} currentPath="/">
 
-	<HeroImage 
-		title="Carlos Rojas Rojas" 
-		subtitle="Project Manager | Senior Data Analyst | Game Product Manager"
-		ctaText="View My Work"
-		ctaLink="#experience"
-	/>
+  <!-- Top Hero Banner -->
+  <HeroNew />
 
-	<section class="section">
-		<div class="container">
-			<h2>About Me</h2>
-			<p>
-				Project Manager and Tech Team Lead with 15+ years of experience in analytical projects and software development.
-				Achievement-oriented with high analytical capacity and proven self-learning abilities. Experienced in managing diverse teams and working with different methodologies including Scrum, Agile, and SAFe. Passionate about LiveOps, game development, data analytics, and building scalable solutions.
-			</p>
-		</div>
-	</section>
+  <!-- Strategic Pillars Section -->
+  <section class="section pillars-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Core Value Proposition</span>
+        <h2 class="section-heading">Strategic Expertise & Impact</h2>
+        <p class="section-lead">
+          Combining analytical engineering rigor with game product management to deliver measurable commercial results.
+        </p>
+      </div>
 
-	<section class="section bg-light" id="experience">
-		<div class="container">
-			<h2>Work Experience</h2>
-			<div class="experience-list">
-				<ExperienceCard 
-					title="LiveOps Product Manager"
-					company="Playstudios Chile SPA"
-					period="11/2024 - 03/2026"
-					description="In charge of Live Operations team for the Tetris Mobile App product."
-					highlights={[
-						"Increased ARPU from 0.12 to 0.14 after content planning and cadencing improvements",
-						"Performed analytical reports and A/B Testing Design for LiveOps features",
-						"Created Fnew features proposals and game economy tuning",
-						"Worked with Marketing to coordinate social campaigns"
-					]}
-					images={[
-					{ url: "Images/TetrisIcon.jpeg", alt: "Tetris Mobile", link: "https://www.playstudios.com/tetris/" },
-					// { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=150&h=150&fit=crop", alt: "Mobile App", link: "https://play.google.com/store/apps/details?id=com.playstudios.tetris" },
-					// { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=150&fit=crop", alt: "Analytics Dashboard", link: "https://analytics.google.com" },
-					// { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=150&h=150&fit=crop", alt: "Team Collaboration", link: "#" }
-					]}
-				/>
-				<ExperienceCard 
-					title="Senior Game Producer"
-					company="Globant"
-					period="07/2021 - 10/2024"
-					description="In charge of Live Operations and Analytics for different gaming projects."
-					highlights={[
-						"Owned content planning and delivery, plus Analytical Reporting for NBA Clash (2021-2022)",
-						"Content planning, feature proposals and economy design for LaLiga Land of Goals",
-						"Content production and features for AEW Figure Fighters"
-					]}
-					images={[
-						{ url: "Images/nbaClashIcon.png", alt: "NBA Clash", link: "https://www.youtube.com/watch?v=UFlPVdTDWwk" },
-						{ url: "Images/LandOfGoalsIcon.jpeg", alt: "LaLiga Land of Goals", link: "https://globant.com/games" },
-						{ url: "Images/AEWFFLogo.jpg", alt: "AEW Figure Fighters", link: "https://globant.com" }
-					]}
-				/>
-				<ExperienceCard 
-					title="Project Manager"
-					company="KPMG Auditores Consultores SPA"
-					period="05/2019 - 06/2021"
-					description="Manager of a development team for internal and external analytical solutions."
-					highlights={[
-						"Development of KPMG Datax Tax System",
-						"Development of client portal conciliacionautos.cl",
-						"Development of client portal devolucionseguros.cl",
-						"Managed cloud infrastructure and stakeholder meetings"
-					]}
-					images={[
-						// { url: "https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=150&h=150&fit=crop", alt: "Analytics Platform", link: "https://kpmg.com" },
-						// { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=150&fit=crop", alt: "Dashboard", link: "https://kpmg.com/datax" },
-						// { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=150&fit=crop", alt: "Web Development", link: "https://conciliacionautos.cl" },
-						// { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=150&h=150&fit=crop", alt: "Team Work", link: "https://devolucionseguros.cl" }
-					]}
-				/>
-				<ExperienceCard 
-					title="Senior Machine Learning Engineer"
-				company="BCI Bank"
-				period="06/2017 - 04/2019"
-				description="Data Analytics and AI research projects, ETL pipeline development in Data Lake."
-				highlights={[
-					"Development of the bank's first financial chatbot",
-					"Development of Gmail extensions for automatic email reading",
-					"Different visualization tools for financial data"
-				]}
-				images={[
-					// { url: "https://images.unsplash.com/photo-1655720409868-643ea7cab259?w=150&h=150&fit=crop", alt: "AI & Machine Learning", link: "https://bci.cl" },
-					// { url: "https://images.unsplash.com/photo-1526374965328-7f5c02cb9e47?w=150&h=150&fit=crop", alt: "Financial Data", link: "https://bci.cl" },
-					// { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=150&fit=crop", alt: "Data Analysis", link: "https://bci.cl/chatbot" },
-					// { url: "https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=150&h=150&fit=crop", alt: "Technology", link: "https://bci.cl" },
-					// { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=150&fit=crop", alt: "Development", link: "https://bci.cl" }
-					]}
-				/>
-				<ExperienceCard 
-				title="Game Analytics and Design Director"
-				company="DeNA Santiago"
-				period="09/2014 - 10/2016"
-				description="Led a team of 12 people - game designers and data analysts."
-				highlights={[
-					"Automatization of BI reports using Google Big Query",
-					"Brought Live Operations capabilities to Chile office",
-					"Board of Directors placement at DeNA Santiago Studio"
-				]}
-				images={[
-					// { url: "https://images.unsplash.com/photo-1538481527238-41ba7c1ba121?w=150&h=150&fit=crop", alt: "Game Design", link: "https://dena.com" },
-					// { url: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=150&h=150&fit=crop", alt: "Gaming Industry", link: "https://dena.com" },
-					// { url: "https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=150&h=150&fit=crop", alt: "Analytics", link: "https://bigquery.cloud.google.com" },
-					// { url: "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=150&h=150&fit=crop", alt: "Mobile Games", link: "https://dena.com" },
-					{ url: starWarsIcon.src, alt: "Star Wars Galactic Defense icon" },
-					{ url: starWarsGameplay.src, alt: "Star Wars Galactic Defense gameplay" },
-					{ url: bloodBrothersIcon.src, alt: "Blood Brothers 2 icon" },
-					{ url: bloodBrothersGameplay.src, alt: "Blood Brothers 2 gameplay" }
-					]}
-				/>
-				<ExperienceCard 
-					title="Senior Data Analyst"
-					company="Atakama Labs / DeNA Santiago"
-					period="08/2012 - 08/2014"
-					description="Data analysis for games, targeted to increase revenue and provide insights."
-					highlights={[
-						"Revenue improvement using data analytics tools",
-						"Provided feedback to game designers for product improvement",
-						"Supported live operations data updates"
-					]}
-					images={[
-						// { url: "https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=150&h=150&fit=crop", alt: "Data Analytics", link: "https://dena.com" },
-						// { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=150&fit=crop", alt: "Dashboard Analysis", link: "https://hadoop.apache.org" },
-						// { url: "https://images.unsplash.com/photo-1526374965328-7f5c02cb9e47?w=150&h=150&fit=crop", alt: "Revenue Data", link: "https://dena.com" },
-						 { url: royalDefendersBanner.src, alt: "Royal Defenders banner" },
-						{ url: royalDefendersGameplay.src, alt: "Royal Defenders gameplay" }
-					]}
-				/>
-			</div>
-		</div>
-	</section>
+      <div class="pillars-grid">
+        {pillars.map(pillar => (
+          <div class="pillar-card">
+            <div class="pillar-icon-box">{pillar.icon}</div>
+            <h3 class="pillar-title">{pillar.title}</h3>
+            <p class="pillar-desc">{pillar.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-	<section class="section">
-		<div class="container">
-			<h2>Skills & Technologies</h2>
-			<div class="skills-grid">
-				<div class="skill-group">
-					<h3>Programming Languages</h3>
-					<ul>
-						<li>Python</li>
-						<li>C# & .NET</li>
-						<li>R</li>
-						<li>JavaScript / NodeJS</li>
-					</ul>
-				</div>
-				<div class="skill-group">
-					<h3>Databases & Data</h3>
-					<ul>
-						<li>SQL Server / Oracle / PostgreSQL</li>
-						<li>MongoDB / DocumentDB</li>
-						<li>Hadoop / Google Big Query</li>
-						<li>ETL Pipeline Development</li>
-					</ul>
-				</div>
-				<div class="skill-group">
-					<h3>Data Visualization & BI</h3>
-					<ul>
-						<li>Tableau Desktop / Server</li>
-						<li>Google Analytics</li>
-						<li>A/B Testing & Analytics</li>
-						<li>Business Intelligence</li>
-					</ul>
-				</div>
-				<div class="skill-group">
-					<h3>Web Development</h3>
-					<ul>
-						<li>React</li>
-						<li>Angular</li>
-						<li>Django / Django Rest</li>
-						<li>Node.js / Express</li>
-					</ul>
-				</div>
-				<div class="skill-group">
-					<h3>Methodologies & Certifications</h3>
-					<ul>
-						<li>Scrum, Agile, SAFe</li>
-						<li>Azure AZ900</li>
-						<li>Google Cloud Digital Leader</li>
-						<li>Project Management</li>
-					</ul>
-				</div>
-				<div class="skill-group">
-					<h3>Tools & Platforms</h3>
-					<ul>
-						<li>Git / SVN</li>
-						<li>Docker</li>
-						<li>AWS</li>
-						<li>DevOps & CI/CD</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Featured Portfolio Highlights Section -->
+  <section class="section bg-card-section" id="featured-work">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <span class="section-tag">Flagship Products</span>
+          <h2 class="section-heading">Featured Portfolio Highlights</h2>
+          <p class="section-lead">Selected commercial products and live operations projects.</p>
+        </div>
+        <a href="/games" class="see-all-link">
+          <span>Explore More</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="featured-grid">
+        {featuredProjects.map(project => (
+          <div class="featured-card">
+            <div class="featured-card-top">
+              <div class="featured-header">
+                <img src={project.image} alt={project.title} class="project-thumb" />
+                <div class="project-meta">
+                  <h3 class="project-title">{project.title}</h3>
+                  <span class="project-company">{project.company} · {project.role}</span>
+                </div>
+              </div>
+              <span class="metric-badge">{project.metric}</span>
+            </div>
+
+            <p class="project-tagline">{project.tagline}</p>
+
+            {project.gameplay && (
+              <div class="project-screenshot-box">
+                <img src={project.gameplay} alt={`${project.title} gameplay preview`} class="project-screenshot" loading="lazy" />
+              </div>
+            )}
+
+            <div class="project-footer">
+              <div class="tag-list">
+                {project.tags.map(tag => (
+                  <span class="tag-pill">{tag}</span>
+                ))}
+              </div>
+              <a href={project.link} class="card-action-link">
+                View Details →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Work Experience Section -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career Trajectory</span>
+        <h2 class="section-heading">Detailed Work Experience</h2>
+        <p class="section-lead">A progressive 15-year career across top gaming studios, financial institutions, and global advisory firms.</p>
+      </div>
+
+      <div class="experience-list">
+        <ExperienceCard 
+          title="LiveOps Product Manager"
+          company="Playstudios Chile SPA"
+          period="11/2024 - 03/2026"
+          description="In charge of Live Operations team for the Tetris Mobile App product."
+          highlights={[
+            "Increased ARPU from 0.12 to 0.14 after content planning and cadencing improvements",
+            "Performed analytical reports and A/B Testing Design for LiveOps features",
+            "Created new feature proposals and tuned game economy balance",
+            "Collaborated with Marketing to synchronize in-game events and social campaigns"
+          ]}
+          images={[
+            { url: "/Images/TetrisIcon.jpeg", alt: "Tetris Mobile", link: "https://www.playstudios.com/tetris/" },
+            { url: tetrisSpaceInvaders.src, alt: "Tetris Space Invaders Event", link: "/games#tetris-mobile" },
+            { url: tetrisXmasSeason.src, alt: "Tetris Holiday Season Event", link: "/games#tetris-mobile" }
+          ]}
+        />
+
+        <ExperienceCard 
+          title="Senior Game Producer"
+          company="Globant"
+          period="07/2021 - 10/2024"
+          description="In charge of Live Operations and Analytics for premier gaming projects."
+          highlights={[
+            "Owned content planning and delivery, plus Analytical Reporting for NBA Clash (2021-2022)",
+            "Spearheaded content planning, feature proposals and economy design for LaLiga Land of Goals",
+            "Directed content production and character move sets for AEW Figure Fighters"
+          ]}
+          images={[
+            { url: "/Images/nbaClashIcon.png", alt: "NBA Clash", link: "https://www.youtube.com/watch?v=UFlPVdTDWwk" },
+            { url: nbaClashGameplay.src, alt: "NBA Clash Gameplay", link: "/games#nba-clash" },
+            { url: "/Images/LandOfGoalsIcon.jpeg", alt: "LaLiga Land of Goals", link: "/games#laliga-land-of-goals" },
+            { url: "/Images/AEWFFLogo.jpg", alt: "AEW Figure Fighters", link: "/games#aew-figure-fighters" }
+          ]}
+        />
+
+        <ExperienceCard 
+          title="Project Manager"
+          company="KPMG Auditores Consultores SPA"
+          period="05/2019 - 06/2021"
+          description="Manager of a software engineering team delivering mission-critical internal and client-facing analytical solutions."
+          highlights={[
+            "Delivered the KPMG Datax Tax Intelligence Platform",
+            "Architected and deployed client portals conciliacionautos.cl and devolucionseguros.cl",
+            "Managed multi-tenant cloud infrastructure and presented roadmap updates to C-level stakeholders",
+            "Implemented Agile/Scrum delivery cadences across distributed squads"
+          ]}
+          images={[]}
+        />
+
+        <ExperienceCard 
+          title="Senior Machine Learning Engineer"
+          company="BCI Bank"
+          period="06/2017 - 04/2019"
+          description="Led data analytics, NLP, and AI research initiatives, including Data Lake ETL pipelines."
+          highlights={[
+            "Engineered the bank's first conversational AI financial chatbot",
+            "Automated document and transaction parsing via custom extensions",
+            "Created executive visualization suites for financial time-series data"
+          ]}
+          images={[]}
+        />
+
+        <ExperienceCard 
+          title="Game Analytics & Design Director"
+          company="DeNA Santiago"
+          period="09/2014 - 10/2016"
+          description="Led a multidisciplinary studio team of 12 game designers and data analysts."
+          highlights={[
+            "Automated enterprise BI telemetry using Google BigQuery",
+            "Established foundational Live Operations infrastructure and best practices in Chile studio",
+            "Held Board of Directors seat at DeNA Santiago Studio, shaping regional product strategy",
+            "Shipped & supported major titles: Star Wars: Galactic Defense and Blood Brothers 2"
+          ]}
+          images={[
+            { url: starWarsIcon.src, alt: "Star Wars Galactic Defense icon", link: "/games#star-wars-galactic-defense" },
+            { url: starWarsGameplay.src, alt: "Star Wars Galactic Defense gameplay", link: "/games#star-wars-galactic-defense" },
+            { url: bloodBrothersIcon.src, alt: "Blood Brothers 2 icon", link: "/games#blood-brothers-2" },
+            { url: bloodBrothersGameplay.src, alt: "Blood Brothers 2 gameplay", link: "/games#blood-brothers-2" }
+          ]}
+        />
+
+        <ExperienceCard 
+          title="Senior Data Analyst"
+          company="Atakama Labs / DeNA Santiago"
+          period="08/2012 - 08/2014"
+          description="In-depth quantitative analysis to maximize retention, monetization, and feature adoption."
+          highlights={[
+            "Identified gameplay economy bottlenecks and tuned sinks/faucets to drive revenue growth",
+            "Delivered daily analytical briefings to design leads to optimize gameplay balance",
+            "Supported live game events and content release updates"
+          ]}
+          images={[
+            { url: royalDefendersBanner.src, alt: "Royal Defenders banner", link: "/games#royal-defenders" },
+            { url: royalDefendersGameplay.src, alt: "Royal Defenders gameplay", link: "/games#royal-defenders" }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Stack & Skills Matrix -->
+  <section class="section bg-light-section" id="skills">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Competencies</span>
+        <h2 class="section-heading">Skills & Technology Matrix</h2>
+        <p class="section-lead">A balanced combination of engineering acumen, data analytics, and product execution.</p>
+      </div>
+
+      <div class="skills-matrix">
+        
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">🎮</span>
+            <h3>Product & LiveOps</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">LiveOps Planning</span>
+            <span class="tag">Game Economy Design</span>
+            <span class="tag">A/B Testing</span>
+            <span class="tag">ARPDAU / ARPU Growth</span>
+            <span class="tag">Content Cadencing</span>
+            <span class="tag">Player Retention Funnels</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">📊</span>
+            <h3>Data & Analytics</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Google BigQuery</span>
+            <span class="tag">Tableau Desktop & Server</span>
+            <span class="tag">Python (Pandas, NumPy)</span>
+            <span class="tag">R Statistical Computing</span>
+            <span class="tag">Hadoop / Spark</span>
+            <span class="tag">ETL & Data Lake Pipelines</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">💾</span>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">SQL Server</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">DocumentDB</span>
+            <span class="tag">HBase</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">💻</span>
+            <h3>Engineering & Web</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">C# / .NET</span>
+            <span class="tag">Node.js / Express</span>
+            <span class="tag">React</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Django & REST</span>
+            <span class="tag">Docker & CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">🤝</span>
+            <h3>Leadership & Agile</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Scrum Master / Agile</span>
+            <span class="tag">SAFe Framework</span>
+            <span class="tag">Cross-functional Squads</span>
+            <span class="tag">C-Level Stakeholder Management</span>
+            <span class="tag">Roadmap Governance</span>
+            <span class="tag">Hiring & Mentorship</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">📜</span>
+            <h3>Certifications & Cloud</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag highlight-cert">Azure AZ900 Certified</span>
+            <span class="tag highlight-cert">GCP Digital Leader</span>
+            <span class="tag">AWS Cloud Fundamentals</span>
+            <span class="tag">Git / SVN</span>
+            <span class="tag">English C2 (TOEIC 840)</span>
+            <span class="tag">Spanish (Native)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Academic Distinction Spotlight -->
+  <section class="section education-section">
+    <div class="container">
+      <div class="education-card">
+        <div class="edu-icon-col">
+          <div class="edu-seal">PUC</div>
+        </div>
+        <div class="edu-content-col">
+          <span class="edu-badge">Academic Foundation</span>
+          <h3 class="edu-degree">{siteConfig.education.degree}</h3>
+          <p class="edu-school">{siteConfig.education.university} · Graduated {siteConfig.education.year}</p>
+          <div class="edu-honors">
+            <span class="trophy-icon">🏆</span>
+            <p><strong>Distinction:</strong> {siteConfig.education.honors}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA & Contact Strip -->
+  <section class="section cta-strip-section">
+    <div class="container">
+      <div class="cta-banner-glass">
+        <div class="cta-content">
+          <h2 class="cta-title">Interested in collaborating or discussing opportunities?</h2>
+          <p class="cta-desc">
+            Whether you need a seasoned LiveOps leader to grow your game economy or a technical Project Manager for data products, let's talk.
+          </p>
+        </div>
+        <div class="cta-buttons">
+          <a href={`mailto:${siteConfig.email}`} class="cta-primary-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Send Email</span>
+          </a>
+          <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="cta-secondary-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.68.74-1.68 1.69a1.69 1.69 0 0 0 1.68 1.69c.96 0 1.69-.75 1.69-1.69 0-.95-.73-1.69-1.69-1.69Z"/>
+            </svg>
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
-	.section {
-		padding: 4rem 2rem;
-	}
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-	.section.bg-light {
-		background-color: #f3f4f6;
-	}
+  :global(body) {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+  }
 
-	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-	}
+  /* Section Standard Layouts */
+  .section {
+    padding: 4.5rem 1.5rem;
+  }
 
-	h2 {
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
-		color: #1f2937;
-	}
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
 
-	h2::after {
-		content: '';
-		display: block;
-		width: 100px;
-		height: 4px;
-		background: linear-gradient(90deg, #667eea, #764ba2);
-		margin-top: 0.5rem;
-	}
+  .bg-card-section {
+    background-color: #f1f5f9;
+  }
 
-	p {
-		font-size: 1.1rem;
-		line-height: 1.8;
-		color: #4b5563;
-		margin-bottom: 2rem;
-	}
+  .bg-light-section {
+    background-color: #ffffff;
+  }
 
-	.experience-list {
-		margin-top: 2rem;
-	}
+  /* Section Headers */
+  .section-header {
+    margin-bottom: 3rem;
+  }
 
-	.skills-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		margin-top: 2rem;
-	}
+  .section-header.text-center {
+    text-align: center;
+  }
 
-	.skill-group {
-		background: white;
-		padding: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	}
+  .section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
 
-	.skill-group h3 {
-		color: #667eea;
-		margin-bottom: 1rem;
-		font-size: 1.25rem;
-	}
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.08);
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
 
-	.skill-group ul {
-		list-style: none;
-		padding: 0;
-	}
+  .section-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
 
-	.skill-group li {
-		color: #4b5563;
-		padding: 0.5rem 0;
-		padding-left: 1.5rem;
-		position: relative;
-	}
+  .section-lead {
+    font-size: 1.05rem;
+    color: #64748b;
+    max-width: 680px;
+    line-height: 1.6;
+    margin: 0;
+  }
 
-	.skill-group li:before {
-		content: '✓';
-		color: #667eea;
-		position: absolute;
-		left: 0;
-		font-weight: bold;
-	}
+  .section-header.text-center .section-lead {
+    margin: 0 auto;
+  }
 
-	@media (max-width: 768px) {
-		h2 {
-			font-size: 1.75rem;
-		}
+  .see-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #4f46e5;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
 
-		.section {
-			padding: 2rem 1rem;
-		}
-	}
+  .see-all-link:hover {
+    transform: translateX(4px);
+    text-decoration: none;
+    color: #4338ca;
+  }
+
+  /* Strategic Pillars Grid */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .pillar-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 2.25rem 1.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.08);
+    border-color: #cbd5e1;
+  }
+
+  .pillar-icon-box {
+    font-size: 2.2rem;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .pillar-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Featured Highlights Grid */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .featured-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  }
+
+  .featured-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .featured-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .project-thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+  }
+
+  .project-company {
+    font-size: 0.85rem;
+    color: #64748b;
+    display: block;
+  }
+
+  .metric-badge {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.65rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+
+  .project-tagline {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-screenshot-box {
+    margin-bottom: 1.25rem;
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 200px;
+    background: #0f172a;
+  }
+
+  .project-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .featured-card:hover .project-screenshot {
+    transform: scale(1.03);
+  }
+
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .card-action-link {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #4f46e5;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .card-action-link:hover {
+    color: #3730a3;
+    text-decoration: underline;
+  }
+
+  /* Experience Section Enhancements */
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* Skills Matrix */
+  .skills-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .skill-category {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .skill-category:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  .skill-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .cat-icon {
+    font-size: 1.4rem;
+  }
+
+  .skill-cat-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tags .tag {
+    font-size: 0.82rem;
+    color: #334155;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  .skill-tags .highlight-cert {
+    background: #eef2ff;
+    color: #4338ca;
+    border-color: #c7d2fe;
+    font-weight: 600;
+  }
+
+  /* Education Spotlight */
+  .education-section {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .education-card {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+  }
+
+  .edu-seal {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  }
+
+  .edu-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #a5b4fc;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .edu-degree {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 1rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+  }
+
+  .edu-honors {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+  }
+
+  .trophy-icon {
+    font-size: 1.25rem;
+  }
+
+  /* Bottom CTA Banner */
+  .cta-strip-section {
+    padding-top: 0;
+  }
+
+  .cta-banner-glass {
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #7c3aed 100%);
+    border-radius: 24px;
+    padding: 3rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+  }
+
+  .cta-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #ffffff;
+  }
+
+  .cta-desc {
+    font-size: 1rem;
+    color: #e0e7ff;
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .cta-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #ffffff;
+    color: #4338ca;
+    padding: 0.85rem 1.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .cta-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color: #3730a3;
+  }
+
+  .cta-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.85rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .cta-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .skills-matrix {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-banner-glass {
+      flex-direction: column;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .cta-desc {
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-heading {
+      font-size: 1.85rem;
+    }
+
+    .education-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.75rem;
+      gap: 1.5rem;
+    }
+
+    .edu-honors {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .skills-matrix {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .cta-primary-btn, .cta-secondary-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 </style>

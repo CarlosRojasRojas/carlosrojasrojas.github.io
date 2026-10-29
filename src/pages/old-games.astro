@@ -1,0 +1,470 @@
+---
+import Layout from "../layouts/Layout.astro";
+import bloodBrothersGameplay from "../assets/Images/bb2-gameplay.jpeg";
+import bloodBrothersIcon from "../assets/Images/bb2-icon.jpeg";
+import dcLegendsGameplay from "../assets/Images/dcl-gameplay.jpeg";
+import dcLegendsIcon from "../assets/Images/dcl-icon.jpeg";
+import nbaClashGameplay from "../assets/Images/nba-clash-gameplay.jpeg";
+import nbaClashGameplayTwo from "../assets/Images/nba-clash-gameplay-2.jpeg";
+import royalDefendersBanner from "../assets/Images/royal-defenders-banner.jpg";
+import royalDefendersGameplay from "../assets/Images/royal-defenders-gameplay.png";
+import dndArenaGameplay from "../assets/Images/dnd-arenaofwar-gameplay.jpg";
+import dndArenaGameplayTwo from "../assets/Images/dnd-arenaofwar-gameplay-2.jpg";
+import dndArenaIcon from "../assets/Images/dnd-arenaofwar-icon.webp";
+import starWarsGameplay from "../assets/Images/sw-galactic-defense-gameplay.jpeg";
+import starWarsIcon from "../assets/Images/sw-galactic-defense-icon.jpg";
+import tetrisPremiumLevels from "../assets/Images/tetris-premium-levels.jpg";
+import tetrisSpaceInvaders from "../assets/Images/tetris-space-invaders.jpeg";
+import tetrisXmasSeason from "../assets/Images/tetris-xmas-season.jpeg";
+
+const games = [
+    {
+        title: "Tetris Mobile",
+        studio: "Playstudios Chile",
+        genre: "Puzzle · Mobile",
+        period: "2024 - 2026",
+        icon: "/Images/TetrisIcon.jpeg",
+        images: [
+            { src: "/Images/TetrisIcon.jpeg", alt: "Tetris Mobile icon" },
+            {
+                src: tetrisSpaceInvaders.src,
+                alt: "Tetris versus Space Invaders event",
+            },
+            { src: tetrisXmasSeason.src, alt: "Tetris holiday season event" },
+            { src: tetrisPremiumLevels.src, alt: "Tetris premium levels" },
+        ],
+        contributions: [
+            "Led LiveOps planning and content cadencing for the Tetris mobile game",
+            "Designed A/B tests and analytical reports for LiveOps events and content updates",
+            "Helped to improve ARPDAU by creating new features with existing game systems",
+        ],
+    },
+    {
+        title: "AEW Figure Fighters",
+        studio: "Globant",
+        genre: "Collectible RPG · Mobile",
+        period: "2021 - 2024",
+        icon: "/Images/AEWFFLogo.jpg",
+        images: [
+            { src: "/Images/AEWFFLogo.jpg", alt: "AEW Figure Fighters logo" },
+            {
+                src: "/Images/AEWFF_gameplay.jpg",
+                alt: "AEW Figure Fighters gameplay",
+            },
+        ],
+        contributions: [
+            "Planned and produced live content for a character-driven mobile game",
+            "Worked on feature delivery and cross-functional production workflows",
+            "Designed characters movesets and power curves",
+        ],
+    },
+    {
+        title: "LaLiga Land of Goals",
+        studio: "Globant",
+        genre: "Sports · Strategy",
+        period: "2021 - 2024",
+        icon: "/Images/LandOfGoalsIcon.jpeg",
+        images: [
+            {
+                src: "/Images/LandOfGoals.jpeg",
+                alt: "LaLiga Land of Goals artwork",
+            },
+            {
+                src: "/Images/LandOfGoalsIcon.jpeg",
+                alt: "LaLiga Land of Goals icon",
+            },
+        ],
+        contributions: [
+            "Created the game live ops features like content store and events",
+            "Contributed to economy design and progression tuning",
+            "Corrdinated with developers and designers to deliver new features and content updates",
+        ],
+    },
+    {
+        title: "NBA Clash",
+        studio: "Globant",
+        genre: "Sports · Mobile",
+        period: "2021 - 2022",
+        icon: "/Images/nbaClashIcon.png",
+        images: [
+            { src: "/Images/nbaClashIcon.png", alt: "NBA Clash icon" },
+            { src: nbaClashGameplay.src, alt: "NBA Clash gameplay" },
+            { src: nbaClashGameplayTwo.src, alt: "NBA Clash gameplay screen" },
+        ],
+        contributions: [
+            "Owned the full roadmap for LiveOps content and events",
+            "Designed multiple A/B tests to improve player conversion and retention",
+            "Created analytical reports to guide product and content decisions",
+        ],
+    },
+    {
+        title: "DC Legends",
+        studio: "Giant Monkey Robot",
+        genre: "Turn-Based RPG · Mobile",
+        period: "2017",
+        icon: dcLegendsIcon.src,
+        images: [
+            { src: dcLegendsGameplay.src, alt: "DC Legends gameplay" },
+            { src: dcLegendsIcon.src, alt: "DC Legends icon" },
+        ],
+        contributions: [
+            "Created the report pipeline and dashboards",
+            "Helped establish reporting practices for LiveOps and content updates",
+        ],
+    },
+    {
+        title: "Blood Brothers 2",
+        studio: "DeNA Santiago",
+        genre: "Strategy RPG · Mobile",
+        period: "2014 - 2016",
+        icon: bloodBrothersIcon.src,
+        images: [
+            {
+                src: bloodBrothersGameplay.src,
+                alt: "Blood Brothers 2 gameplay",
+            },
+            { src: bloodBrothersIcon.src, alt: "Blood Brothers 2 icon" },
+        ],
+        contributions: [
+            "In charge of the designers and analysts teams for the game events",
+            "Worked with Community Managers to improve player engagement and retention",
+            "Proposed and implemented new features for special Events (Raid Boss)",
+        ],
+    },
+    {
+        title: "Star Wars: Galactic Defense",
+        studio: "DeNA Santiago",
+        genre: "Tower Defense · Mobile",
+        period: "2014 - 2016",
+        icon: starWarsIcon.src,
+        images: [
+            {
+                src: starWarsGameplay.src,
+                alt: "Star Wars Galactic Defense gameplay",
+            },
+            { src: starWarsIcon.src, alt: "Star Wars Galactic Defense icon" },
+        ],
+        contributions: [
+            "Revamped the game economy and progression systems",
+            "Created many game levels and content for LiveOps events",
+            "In charge of the analytics team and reporting for the game, including dashboards",
+        ],
+    },
+    {
+        title: "Royal Defenders",
+        studio: "DeNA Santiago",
+        genre: "Tower Defense · Mobile",
+        period: "2014 - 2016",
+        icon: royalDefendersBanner.src,
+        images: [
+            { src: royalDefendersBanner.src, alt: "Royal Defenders gameplay" },
+            { src: royalDefendersGameplay.src, alt: "Royal Defenders gameplay screen" },
+        ],
+        contributions: [
+            "Designed game analytics and reporting ",
+            "Supported game designers with data-driven insights"
+        ],
+    },
+    {
+        title: "D&D Arena of War",
+        studio: "DeNA Santiago",
+        genre: "Strategy RPG · Mobile",
+        period: "2014 - 2016",
+        icon: dndArenaIcon.src,
+        images: [
+            { src: dndArenaIcon.src, alt: "D&D Arena of War icon" },
+            { src: dndArenaGameplay.src, alt: "D&D Arena of War gameplay" },
+            { src: dndArenaGameplayTwo.src, alt: "D&D Arena of War battle screen" },
+        ],
+        contributions: [
+            "Designed game analytics and reporting",
+            "Localized the game texts",
+            "Difficulty balance for special events"
+        ],
+    },
+];
+---
+
+<Layout title="Games (Original Archive) | My Portfolio" currentPath="/old-games">
+    <div style="background: #374151; color: #f9fafb; padding: 0.5rem 1rem; text-align: center; font-size: 0.85rem;">
+        📦 <strong>Original Games Portfolio Archive</strong> · <a href="/games" style="color: #60a5fa; text-decoration: underline; margin-left: 0.5rem;">Return to New Default Games Portfolio (/games)</a>
+    </div>
+
+    <section class="games-intro">
+        <div class="intro-inner">
+            <p class="eyebrow">Selected work</p>
+            <h1>Games I helped bring to life.</h1>
+            <p class="intro-copy">
+                A selection of mobile game projects where I worked across
+                LiveOps, analytics, content planning, economy design, and
+                production.
+            </p>
+        </div>
+    </section>
+
+    <section class="portfolio" aria-label="Game portfolio">
+        <div class="portfolio-grid">
+            {
+                games.map((game, index) => (
+                    <article class={`game-card card-${index + 1}`}>
+                        <div class="game-media">
+                            <div class="gallery">
+                                {game.images.map((image, imageIndex) => (
+                                    <img
+                                        src={image.src}
+                                        alt={image.alt}
+                                        class={
+                                            imageIndex === 0
+                                                ? "primary-image"
+                                                : "secondary-image"
+                                        }
+                                        loading={index > 1 ? "lazy" : undefined}
+                                    />
+                                ))}
+                            </div>
+                            <img
+                                class="game-icon"
+                                src={game.icon}
+                                alt=""
+                                aria-hidden="true"
+                            />
+                        </div>
+                        <div class="game-details">
+                            <div class="game-heading">
+                                <div>
+                                    <p class="game-studio">{game.studio}</p>
+                                    <h2>{game.title}</h2>
+                                </div>
+                                <span class="game-period">{game.period}</span>
+                            </div>
+                            <p class="genre">{game.genre}</p>
+                            <h3>My contribution</h3>
+                            <ul>
+                                {game.contributions.map((contribution) => (
+                                    <li>{contribution}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .games-intro {
+        background: linear-gradient(
+            120deg,
+            #172554 0%,
+            #1e3a5f 55%,
+            #0f766e 100%
+        );
+        color: white;
+        padding: 5.5rem 2rem 5rem;
+    }
+
+    .intro-inner,
+    .portfolio-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .intro-inner {
+        max-width: 850px;
+        margin-left: max(2rem, calc((100% - 1200px) / 2));
+    }
+
+    .eyebrow {
+        color: #5eead4;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .games-intro h1 {
+        font-size: clamp(2.7rem, 6vw, 5.2rem);
+        max-width: 780px;
+        letter-spacing: -0.04em;
+    }
+
+    .intro-copy {
+        color: #dbeafe;
+        font-size: 1.15rem;
+        margin-top: 1.5rem;
+        max-width: 640px;
+    }
+
+    .portfolio {
+        background: #f8fafc;
+        padding: 4.5rem 2rem 6rem;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .game-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        overflow: hidden;
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .game-card:hover {
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.14);
+        transform: translateY(-5px);
+    }
+
+    .game-media {
+        background: #172554;
+        height: 250px;
+        position: relative;
+    }
+
+    .gallery {
+        display: flex;
+        height: 100%;
+        gap: 3px;
+    }
+
+    .gallery img {
+        height: 100%;
+        min-width: 0;
+        object-fit: cover;
+    }
+
+    .primary-image {
+        flex: 1;
+        width: 100%;
+    }
+
+    .secondary-image {
+        flex: 0 0 34%;
+        width: 34%;
+    }
+
+    .game-icon {
+        border: 4px solid white;
+        border-radius: 12px;
+        bottom: -34px;
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+        height: 88px;
+        left: 1.5rem;
+        object-fit: cover;
+        position: absolute;
+        width: 88px;
+    }
+
+    .game-details {
+        padding: 3.3rem 1.5rem 1.7rem;
+    }
+
+    .game-heading {
+        align-items: start;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    .game-studio {
+        color: #0f766e;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.35rem;
+        text-transform: uppercase;
+    }
+
+    .game-details h2 {
+        color: #172554;
+        font-size: 1.65rem;
+    }
+
+    .game-period {
+        color: #64748b;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .genre {
+        color: #475569;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin: 0.65rem 0 1.5rem;
+    }
+
+    .game-details h3 {
+        border-top: 1px solid #e2e8f0;
+        color: #172554;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        padding-top: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .game-details ul {
+        list-style: none;
+        margin-top: 0.9rem;
+    }
+
+    .game-details li {
+        color: #475569;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 0.7rem;
+        padding-left: 1.2rem;
+        position: relative;
+    }
+
+    .game-details li::before {
+        color: #f97316;
+        content: "•";
+        font-size: 1.3rem;
+        left: 0;
+        line-height: 1;
+        position: absolute;
+        top: 0.12rem;
+    }
+
+    @media (max-width: 760px) {
+        .games-intro {
+            padding: 4rem 1.25rem 3.5rem;
+        }
+
+        .intro-inner {
+            margin-left: 0;
+        }
+
+        .portfolio {
+            padding: 3rem 1.25rem 4rem;
+        }
+
+        .portfolio-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .game-media {
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .game-heading {
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .game-period {
+            white-space: normal;
+        }
+    }
+</style>

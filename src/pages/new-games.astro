@@ -1,0 +1,1323 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { siteConfig } from "../siteConfig";
+
+import bloodBrothersGameplay from "../assets/Images/bb2-gameplay.jpeg";
+import bloodBrothersIcon from "../assets/Images/bb2-icon.jpeg";
+import dcLegendsGameplay from "../assets/Images/dcl-gameplay.jpeg";
+import dcLegendsIcon from "../assets/Images/dcl-icon.jpeg";
+import nbaClashGameplay from "../assets/Images/nba-clash-gameplay.jpeg";
+import nbaClashGameplayTwo from "../assets/Images/nba-clash-gameplay-2.jpeg";
+import royalDefendersBanner from "../assets/Images/royal-defenders-banner.jpg";
+import royalDefendersGameplay from "../assets/Images/royal-defenders-gameplay.png";
+import dndArenaGameplay from "../assets/Images/dnd-arenaofwar-gameplay.jpg";
+import dndArenaGameplayTwo from "../assets/Images/dnd-arenaofwar-gameplay-2.jpg";
+import dndArenaIcon from "../assets/Images/dnd-arenaofwar-icon.webp";
+import starWarsGameplay from "../assets/Images/sw-galactic-defense-gameplay.jpeg";
+import starWarsIcon from "../assets/Images/sw-galactic-defense-icon.jpg";
+import tetrisPremiumLevels from "../assets/Images/tetris-premium-levels.jpg";
+import tetrisSpaceInvaders from "../assets/Images/tetris-space-invaders.jpeg";
+import tetrisXmasSeason from "../assets/Images/tetris-xmas-season.jpeg";
+
+const pageTitle = "Game Portfolio | Carlos Rojas Rojas";
+
+const games = [
+    {
+        id: "tetris-mobile",
+        title: "Tetris® Mobile",
+        studio: "Playstudios Chile",
+        studioKey: "playstudios",
+        genre: "Puzzle · Mobile",
+        category: "casual",
+        role: "LiveOps Product Manager",
+        period: "2024 - 2026",
+        icon: "/Images/TetrisIcon.jpeg",
+        link: "https://www.playstudios.com/tetris/",
+        linkLabel: "Official Website",
+        highlightTag: "ARPU Growth",
+        images: [
+            {
+                src: tetrisSpaceInvaders.src,
+                alt: "Tetris versus Space Invaders event",
+            },
+            {
+                src: tetrisXmasSeason.src,
+                alt: "Tetris holiday season event",
+            },
+            {
+                src: tetrisPremiumLevels.src,
+                alt: "Tetris premium levels",
+            },
+        ],
+        contributions: [
+            "Led LiveOps planning, promotional calendar, and content cadencing for the Tetris mobile game",
+            "Designed and analyzed A/B test experiments for LiveOps events and seasonal monetization updates",
+            "Improved ARPU and ARPDAU by architecting new features integrated with existing game loops",
+            "Collaborated cross-functionally with Marketing to synchronize social campaigns with live game events",
+        ],
+        techStack: ["LiveOps", "A/B Testing", "Economy Tuning", "Mobile Game", "Event Cadence"]
+    },
+    {
+        id: "nba-clash",
+        title: "NBA Clash",
+        studio: "Globant",
+        studioKey: "globant",
+        genre: "Sports · Mobile",
+        category: "sports",
+        role: "Senior Game Producer",
+        period: "2021 - 2022",
+        icon: "/Images/nbaClashIcon.png",
+        link: "https://www.youtube.com/watch?v=UFlPVdTDWwk",
+        linkLabel: "Watch Gameplay Video",
+        highlightTag: "Full Roadmap Owner",
+        images: [
+            {
+                src: nbaClashGameplay.src,
+                alt: "NBA Clash basketball action gameplay",
+            },
+            {
+                src: nbaClashGameplayTwo.src,
+                alt: "NBA Clash court gameplay screen",
+            },
+        ],
+        contributions: [
+            "Owned the end-to-end content roadmap and delivery for LiveOps events and player tournaments",
+            "Designed multiple conversion-focused A/B tests to optimize new user onboarding and player retention",
+            "Engineered analytical reports and cohort telemetry to steer executive and design decisions",
+        ],
+        techStack: ["Sports IP", "Roadmap Governance", "A/B Testing", "Conversion Optimization"]
+    },
+    {
+        id: "aew-figure-fighters",
+        title: "AEW Figure Fighters",
+        studio: "Globant",
+        studioKey: "globant",
+        genre: "Collectible RPG · Mobile",
+        category: "rpg",
+        role: "Live Content Producer",
+        period: "2021 - 2024",
+        icon: "/Images/AEWFFLogo.jpg",
+        link: "https://globant.com",
+        linkLabel: "Studio Page",
+        highlightTag: "Economy & Movesets",
+        images: [
+            {
+                src: "/Images/AEWFF_gameplay.jpg",
+                alt: "AEW Figure Fighters gameplay action",
+            },
+        ],
+        contributions: [
+            "Produced and scheduled live content drops for a high-profile licensed wrestling RPG",
+            "Designed wrestler character movesets, stat progression curves, and power balancing",
+            "Orchestrated feature delivery between developers, designers, and licensor stakeholders",
+        ],
+        techStack: ["Collectible RPG", "Character Balancing", "Content Production", "LiveOps"]
+    },
+    {
+        id: "laliga-land-of-goals",
+        title: "LaLiga Land of Goals",
+        studio: "Globant",
+        studioKey: "globant",
+        genre: "Sports · Strategy",
+        category: "sports",
+        role: "Game Producer & Economy Lead",
+        period: "2021 - 2024",
+        icon: "/Images/LandOfGoalsIcon.jpeg",
+        link: "https://globant.com/games",
+        linkLabel: "Globant Games",
+        highlightTag: "Store & Progression",
+        images: [
+            {
+                src: "/Images/LandOfGoals.jpeg",
+                alt: "LaLiga Land of Goals stadium artwork",
+            },
+        ],
+        contributions: [
+            "Built out core LiveOps features including in-game content stores and seasonal challenges",
+            "Contributed to macro economy design, sink/faucet balancing, and progression curves",
+            "Coordinated multi-disciplinary engineering and art sprints to deliver regular game updates",
+        ],
+        techStack: ["Economy Design", "Live Store", "Strategy", "Progression Tuning"]
+    },
+    {
+        id: "star-wars-galactic-defense",
+        title: "Star Wars™: Galactic Defense",
+        studio: "DeNA Santiago",
+        studioKey: "dena",
+        genre: "Tower Defense · Mobile",
+        category: "strategy",
+        role: "Game Analytics & Design Director",
+        period: "2014 - 2016",
+        icon: starWarsIcon.src,
+        link: "https://dena.com",
+        linkLabel: "DeNA Studio",
+        highlightTag: "Studio Leadership",
+        images: [
+            {
+                src: starWarsGameplay.src,
+                alt: "Star Wars Galactic Defense battle gameplay",
+            },
+        ],
+        contributions: [
+            "Revamped core economy mechanics and progression balance across light and dark side campaigns",
+            "Designed levels, enemies, and event-exclusive content for high-cadence LiveOps campaigns",
+            "Supervised analytics telemetry and created real-time studio dashboards in Google BigQuery",
+        ],
+        techStack: ["Lucasfilm IP", "Studio Leadership", "Google BigQuery", "Level Design", "Economy"]
+    },
+    {
+        id: "dc-legends",
+        title: "DC Legends",
+        studio: "Giant Monkey Robot",
+        studioKey: "other",
+        genre: "Turn-Based RPG · Mobile",
+        category: "rpg",
+        role: "BI & Analytics Lead",
+        period: "2017",
+        icon: dcLegendsIcon.src,
+        link: null,
+        highlightTag: "BI Telemetry",
+        images: [
+            {
+                src: dcLegendsGameplay.src,
+                alt: "DC Legends superhero combat gameplay",
+            },
+        ],
+        contributions: [
+            "Engineered automated telemetry pipelines and executive reporting dashboards for live operations",
+            "Established data-driven review practices for ongoing character releases and balance patches",
+        ],
+        techStack: ["Warner Bros / DC Comics", "BI Pipelines", "Live Telemetry", "RPG Balancing"]
+    },
+    {
+        id: "blood-brothers-2",
+        title: "Blood Brothers 2",
+        studio: "DeNA Santiago",
+        studioKey: "dena",
+        genre: "Strategy RPG · Mobile",
+        category: "rpg",
+        role: "Game Analytics & Design Director",
+        period: "2014 - 2016",
+        icon: bloodBrothersIcon.src,
+        link: null,
+        highlightTag: "Raid Boss Events",
+        images: [
+            {
+                src: bloodBrothersGameplay.src,
+                alt: "Blood Brothers 2 dark fantasy tactical gameplay",
+            },
+        ],
+        contributions: [
+            "Led designers and analysts executing weekly live events and competitive PvP cycles",
+            "Collaborated closely with Community Management to improve player engagement and minimize churn",
+            "Designed and implemented new feature mechanics for high-stakes Raid Boss community events",
+        ],
+        techStack: ["Dark Fantasy RPG", "PvP & Raid Events", "Team Leadership", "Churn Mitigation"]
+    },
+    {
+        id: "royal-defenders",
+        title: "Royal Defenders",
+        studio: "DeNA Santiago",
+        studioKey: "dena",
+        genre: "Tower Defense · Mobile",
+        category: "strategy",
+        role: "Senior Data Analyst",
+        period: "2014 - 2016",
+        icon: royalDefendersBanner.src,
+        link: null,
+        highlightTag: "Quantitative Analysis",
+        images: [
+            {
+                src: royalDefendersGameplay.src,
+                alt: "Royal Defenders gameplay screen",
+            },
+            {
+                src: royalDefendersBanner.src,
+                alt: "Royal Defenders banner",
+            },
+        ],
+        contributions: [
+            "Constructed foundational quantitative models to identify difficulty spikes and drop-off points",
+            "Supplied gameplay and level designers with data-driven feedback to optimize stage progression",
+        ],
+        techStack: ["Difficulty Curves", "Funnel Telemetry", "Progression Analysis"]
+    },
+    {
+        id: "dnd-arena-of-war",
+        title: "D&D Arena of War",
+        studio: "DeNA Santiago",
+        studioKey: "dena",
+        genre: "Strategy RPG · Mobile",
+        category: "rpg",
+        role: "Senior Data Analyst",
+        period: "2014 - 2016",
+        icon: dndArenaIcon.src,
+        link: null,
+        highlightTag: "Event Tuning",
+        images: [
+            {
+                src: dndArenaGameplay.src,
+                alt: "D&D Arena of War battle gameplay",
+            },
+            {
+                src: dndArenaGameplayTwo.src,
+                alt: "D&D Arena of War character selection",
+            },
+        ],
+        contributions: [
+            "Designed full game analytics telemetry schemas and recurring executive reporting",
+            "Tuned difficulty balance and drop tables for special limited-time events",
+            "Collaborated on game text localization and event staging",
+        ],
+        techStack: ["Wizards of the Coast IP", "Drop Tables", "Event Balancing", "Telemetry"]
+    },
+];
+
+const gameStats = [
+    { value: "8+", label: "Commercial Titles", subtext: "Global mobile games shipped" },
+    { value: "Top Tier", label: "Licensed IPs", subtext: "Tetris, Star Wars, NBA, DC" },
+    { value: "10+ Yrs", label: "In Game Industry", subtext: "Production, LiveOps & Analytics" },
+    { value: "12+", label: "Studio Leadership", subtext: "Team of designers & analysts led" }
+];
+---
+
+<Layout title={pageTitle} currentPath="/new-games">
+
+    <!-- Preview Notice Header -->
+    <aside class="preview-banner" aria-label="Version preview switcher">
+        <div class="preview-inner">
+            <div class="preview-badge">
+                <span class="sparkle">✨</span>
+                <strong>NEW GAMES PORTFOLIO PREVIEW</strong>
+            </div>
+            <p class="preview-text">
+                Revamped layout aligned with the new home design: ambient dark hero, filterable cards, and deep-dive case studies.
+            </p>
+            <div class="preview-actions">
+                <a href="/games" class="preview-link">Go to Live Games Portfolio (/games) &rarr;</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Ambient Hero Banner -->
+    <header class="games-hero">
+        <div class="ambient-glow glow-1" aria-hidden="true"></div>
+        <div class="ambient-glow glow-2" aria-hidden="true"></div>
+        <div class="grid-overlay" aria-hidden="true"></div>
+
+        <div class="hero-container">
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>Producer · LiveOps Lead · Analytics Director</span>
+            </div>
+
+            <h1 class="hero-title">
+                Games I Helped <span class="gradient-text">Bring to Life</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                A track record of shipping, operating, and scaling commercial mobile games. From global franchise powerhouses like <strong>Tetris®</strong>, <strong>Star Wars™</strong>, and <strong>NBA Clash</strong> to tactical RPGs and strategy titles, my focus is driving player retention, balanced economies, and revenue growth.
+            </p>
+
+            <!-- Metrics Ribbon -->
+            <div class="stats-ribbon">
+                {gameStats.map(stat => (
+                    <div class="stat-card">
+                        <div class="stat-number">{stat.value}</div>
+                        <div class="stat-label">{stat.label}</div>
+                        <div class="stat-subtext">{stat.subtext}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Bar & Portfolio Showcase -->
+    <main class="portfolio-section" id="portfolio-grid">
+        <div class="container">
+            
+            <!-- Filter Toolbar -->
+            <div class="filter-toolbar">
+                <div class="filter-label-group">
+                    <span class="filter-heading">Filter Projects:</span>
+                    <span class="game-count-badge" id="visible-count">{games.length} Games</span>
+                </div>
+                
+                <div class="filter-buttons" role="tablist" aria-label="Game categories">
+                    <button class="filter-btn active" data-filter="all">All Games</button>
+                    <button class="filter-btn" data-filter="playstudios">Playstudios</button>
+                    <button class="filter-btn" data-filter="globant">Globant</button>
+                    <button class="filter-btn" data-filter="dena">DeNA</button>
+                    <button class="filter-btn" data-filter="rpg">RPGs</button>
+                    <button class="filter-btn" data-filter="sports">Sports</button>
+                    <button class="filter-btn" data-filter="strategy">Strategy</button>
+                </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div class="games-grid">
+                {games.map((game, index) => (
+                    <article 
+                        class="game-card" 
+                        id={game.id}
+                        data-studio={game.studioKey}
+                        data-category={game.category}
+                    >
+                        <!-- Media Container with Gallery Preview -->
+                        <div class="game-media-container">
+                            <div class="media-carousel" data-card-id={game.id}>
+                                {game.images.map((img, imgIdx) => (
+                                    <div class={`media-slide ${imgIdx === 0 ? 'active' : ''}`} data-index={imgIdx}>
+                                        <img 
+                                            src={img.src} 
+                                            alt={img.alt} 
+                                            class="slide-img" 
+                                            loading={index > 1 ? "lazy" : "eager"}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+
+                            <!-- Highlight Metric Badge -->
+                            <div class="card-highlight-pill">
+                                <span>{game.highlightTag}</span>
+                            </div>
+
+                            <!-- Carousel dots when more than 1 image -->
+                            {game.images.length > 1 && (
+                                <div class="gallery-dots" data-card-id={game.id}>
+                                    {game.images.map((_, i) => (
+                                        <button 
+                                            class={`dot-btn ${i === 0 ? 'active' : ''}`} 
+                                            data-slide={i} 
+                                            aria-label={`Show image ${i + 1}`}
+                                        ></button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        <!-- Card Body Content -->
+                        <div class="game-body">
+                            <!-- Floating Game Icon (Placed here so overflow:hidden never cuts it in half) -->
+                            <div class="icon-avatar-wrap">
+                                <img src={game.icon} alt={`${game.title} icon`} class="avatar-icon" />
+                            </div>
+                            
+                            <div class="game-meta-row">
+                                <div class="studio-badge-group">
+                                    <span class="studio-tag">{game.studio}</span>
+                                    <span class="genre-text">{game.genre}</span>
+                                </div>
+                                <span class="period-pill">{game.period}</span>
+                            </div>
+
+                            <h2 class="game-title">{game.title}</h2>
+                            <p class="game-role-badge">
+                                <span class="role-icon">⚡</span>
+                                <span>{game.role}</span>
+                            </p>
+
+                            <!-- Contributions List -->
+                            <div class="contributions-block">
+                                <h3 class="section-micro-title">Key Contributions & Impact</h3>
+                                <ul class="contributions-list">
+                                    {game.contributions.map(item => (
+                                        <li>
+                                            <span class="bullet-check">✓</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <!-- Tech Stack & System Tags -->
+                            <div class="card-bottom-row">
+                                <div class="tags-container">
+                                    {game.techStack.map(tag => (
+                                        <span class="system-tag">{tag}</span>
+                                    ))}
+                                </div>
+
+                                {game.link && (
+                                    <a 
+                                        href={game.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        class="external-action-btn"
+                                    >
+                                        <span>{game.linkLabel || "View Project"}</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                )}
+                            </div>
+
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            <div class="no-results-msg" id="no-results" style="display: none;">
+                <p>No games found for this category filter. Try selecting "All Games".</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bottom Contact CTA Banner -->
+    <section class="section games-cta-section">
+        <div class="container">
+            <div class="cta-banner-glass">
+                <div class="cta-text-wrap">
+                    <span class="cta-mini-tag">Opportunities & Advisory</span>
+                    <h2 class="cta-heading">Looking to elevate your game's LiveOps or roadmap?</h2>
+                    <p class="cta-sub">
+                        From economy redesign and content cadence to setting up high-conversion A/B testing pipelines, I bring 15+ years of software & gaming leadership.
+                    </p>
+                </div>
+                <div class="cta-button-group">
+                    <a href={`mailto:${siteConfig.email}`} class="btn-primary-solid">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Send Email</span>
+                    </a>
+                    <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="btn-secondary-glass">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.68.74-1.68 1.69a1.69 1.69 0 0 0 1.68 1.69c.96 0 1.69-.75 1.69-1.69 0-.95-.73-1.69-1.69-1.69Z"/>
+                        </svg>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</Layout>
+
+<script>
+    // Client-side category filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.game-card');
+    const countBadge = document.getElementById('visible-count');
+    const noResults = document.getElementById('no-results');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            let visible = 0;
+
+            cards.forEach(card => {
+                const studio = card.getAttribute('data-studio');
+                const category = card.getAttribute('data-category');
+
+                if (filter === 'all' || studio === filter || category === filter) {
+                    (card as HTMLElement).style.display = 'flex';
+                    visible++;
+                } else {
+                    (card as HTMLElement).style.display = 'none';
+                }
+            });
+
+            if (countBadge) {
+                countBadge.textContent = `${visible} Game${visible === 1 ? '' : 's'}`;
+            }
+
+            if (noResults) {
+                noResults.style.display = visible === 0 ? 'block' : 'none';
+            }
+        });
+    });
+
+    // Image dot switcher for cards with multiple screenshots
+    document.querySelectorAll('.game-card').forEach(card => {
+        const dots = card.querySelectorAll('.dot-btn');
+        const slides = card.querySelectorAll('.media-slide');
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const targetIdx = parseInt(dot.getAttribute('data-slide') || '0', 10);
+                
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+
+                slides.forEach((s, idx) => {
+                    s.classList.toggle('active', idx === targetIdx);
+                });
+            });
+        });
+    });
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :global(body) {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+    }
+
+    /* Comparison Preview Banner */
+    .preview-banner {
+        background: linear-gradient(90deg, #1e1b4b 0%, #312e81 100%);
+        color: #e0e7ff;
+        padding: 0.65rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .preview-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.85rem;
+    }
+
+    .preview-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(99, 102, 241, 0.35);
+        padding: 0.25rem 0.65rem;
+        border-radius: 6px;
+        letter-spacing: 0.04em;
+        font-size: 0.78rem;
+        color: #c7d2fe;
+        border: 1px solid rgba(165, 180, 252, 0.3);
+    }
+
+    .preview-text {
+        color: #cbd5e1;
+        margin: 0;
+    }
+
+    .preview-link {
+        display: inline-flex;
+        align-items: center;
+        color: #ffffff;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color 0.2s;
+    }
+
+    .preview-link:hover {
+        color: #93c5fd;
+    }
+
+    /* Games Hero Banner */
+    .games-hero {
+        position: relative;
+        background: radial-gradient(circle at 15% 20%, #1e1b4b 0%, #0f172a 60%, #090d16 100%);
+        color: #f8fafc;
+        padding: 4.5rem 1.5rem 3.5rem 1.5rem;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ambient-glow {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.4;
+    }
+
+    .glow-1 {
+        width: 500px;
+        height: 500px;
+        top: -100px;
+        left: 5%;
+        background: radial-gradient(circle, #6366f1 0%, rgba(99, 102, 241, 0) 70%);
+    }
+
+    .glow-2 {
+        width: 440px;
+        height: 440px;
+        bottom: -50px;
+        right: 5%;
+        background: radial-gradient(circle, #8b5cf6 0%, rgba(139, 92, 246, 0) 70%);
+    }
+
+    .grid-overlay {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-container {
+        position: relative;
+        z-index: 2;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(30, 41, 59, 0.7);
+        border: 1px solid rgba(129, 140, 248, 0.35);
+        border-radius: 9999px;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #e0e7ff;
+        backdrop-filter: blur(12px);
+        margin-bottom: 1.25rem;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 8px #10b981;
+    }
+
+    .hero-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+        color: #ffffff;
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #a5b4fc 0%, #c084fc 50%, #f472b6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #94a3b8;
+        max-width: 780px;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-subtitle strong {
+        color: #f1f5f9;
+        font-weight: 600;
+    }
+
+    /* Stats Ribbon */
+    .stats-ribbon {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+
+    .stat-card {
+        background: rgba(30, 41, 59, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.25rem 1.5rem;
+        backdrop-filter: blur(12px);
+        text-align: center;
+        transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(99, 102, 241, 0.4);
+        background: rgba(30, 41, 59, 0.7);
+    }
+
+    .stat-number {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2.1rem;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+        background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #93c5fd;
+        margin-bottom: 0.2rem;
+    }
+
+    .stat-subtext {
+        font-size: 0.75rem;
+        color: #94a3b8;
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+        padding: 3.5rem 1.5rem 5rem;
+        background: #f8fafc;
+    }
+
+    .container {
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    /* Filter Toolbar */
+    .filter-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+        background: #ffffff;
+        padding: 1rem 1.5rem;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .filter-label-group {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .filter-heading {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #0f172a;
+    }
+
+    .game-count-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        background: #eef2ff;
+        color: #4338ca;
+        padding: 0.25rem 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid #c7d2fe;
+    }
+
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        background: transparent;
+        border: 1px solid #e2e8f0;
+        color: #64748b;
+        padding: 0.45rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+        border-color: #cbd5e1;
+    }
+
+    .filter-btn.active {
+        background: #4f46e5;
+        color: #ffffff;
+        border-color: #4f46e5;
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Games Grid */
+    .games-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.25rem;
+    }
+
+    /* Game Card */
+    .game-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .game-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+        border-color: #cbd5e1;
+    }
+
+    /* Media Area */
+    .game-media-container {
+        position: relative;
+        background: #090d16;
+        height: 350px;
+        overflow: hidden;
+    }
+
+    .media-carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .media-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        transform: scale(1.02);
+    }
+
+    .media-slide.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    .slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* Card Body */
+    .game-body {
+        position: relative;
+        padding: 3.5rem 1.75rem 1.75rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    /* Floating Game Icon (Overlaps media and body without being cut in half) */
+    .icon-avatar-wrap {
+        position: absolute;
+        top: -42px;
+        left: 1.5rem;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .avatar-icon {
+        width: 84px;
+        height: 84px;
+        border-radius: 20px;
+        border: 4px solid #ffffff;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+        object-fit: cover;
+        background: #ffffff;
+        display: block;
+    }
+
+    /* Highlight Metric Pill on Media */
+    .card-highlight-pill {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 5;
+        background: rgba(15, 23, 42, 0.85);
+        color: #a7f3d0;
+        border: 1px solid rgba(167, 243, 208, 0.3);
+        backdrop-filter: blur(8px);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.3rem 0.75rem;
+        border-radius: 9999px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Carousel dots */
+    .gallery-dots {
+        position: absolute;
+        bottom: 0.75rem;
+        right: 1rem;
+        z-index: 5;
+        display: flex;
+        gap: 0.4rem;
+        background: rgba(15, 23, 42, 0.6);
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+        backdrop-filter: blur(4px);
+    }
+
+    .dot-btn {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .dot-btn.active {
+        background: #ffffff;
+        transform: scale(1.3);
+    }
+
+    .game-meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .studio-badge-group {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+
+    .studio-tag {
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #4f46e5;
+    }
+
+    .genre-text {
+        font-size: 0.8rem;
+        color: #64748b;
+    }
+
+    .period-pill {
+        font-size: 0.78rem;
+        color: #475569;
+        background: #f1f5f9;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .game-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 0.35rem;
+    }
+
+    .game-role-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #0d9488;
+        background: #f0fdfa;
+        border: 1px solid #ccfbf1;
+        padding: 0.25rem 0.65rem;
+        border-radius: 6px;
+        width: fit-content;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Contributions */
+    .contributions-block {
+        border-top: 1px solid #f1f5f9;
+        padding-top: 1.1rem;
+        margin-bottom: 1.5rem;
+        flex: 1;
+    }
+
+    .section-micro-title {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: #94a3b8;
+        margin-bottom: 0.75rem;
+    }
+
+    .contributions-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .contributions-list li {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        color: #475569;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .bullet-check {
+        color: #10b981;
+        font-weight: 800;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        flex-shrink: 0;
+    }
+
+    /* Tags & Action Row */
+    .card-bottom-row {
+        border-top: 1px solid #f1f5f9;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        flex: 1;
+    }
+
+    .system-tag {
+        font-size: 0.72rem;
+        background: #f1f5f9;
+        color: #475569;
+        padding: 0.2rem 0.5rem;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+
+    .external-action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #4f46e5;
+        text-decoration: none;
+        transition: color 0.2s, transform 0.2s;
+        white-space: nowrap;
+    }
+
+    .external-action-btn:hover {
+        color: #3730a3;
+        transform: translateX(2px);
+        text-decoration: underline;
+    }
+
+    .no-results-msg {
+        text-align: center;
+        padding: 3rem;
+        background: #ffffff;
+        border-radius: 16px;
+        color: #64748b;
+        font-size: 1.05rem;
+    }
+
+    /* Bottom CTA Section */
+    .games-cta-section {
+        padding: 0 1.5rem 5rem 1.5rem;
+    }
+
+    .cta-banner-glass {
+        background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+        border-radius: 24px;
+        padding: 3rem;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.5rem;
+        box-shadow: 0 20px 40px rgba(30, 27, 75, 0.4);
+    }
+
+    .cta-mini-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: #a5b4fc;
+        background: rgba(165, 180, 252, 0.12);
+        padding: 0.3rem 0.75rem;
+        border-radius: 9999px;
+        margin-bottom: 0.75rem;
+    }
+
+    .cta-heading {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+        color: #ffffff;
+    }
+
+    .cta-sub {
+        font-size: 1.02rem;
+        color: #cbd5e1;
+        max-width: 620px;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .cta-button-group {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+    }
+
+    .btn-primary-solid {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: #ffffff;
+        color: #4338ca;
+        padding: 0.85rem 1.6rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary-solid:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        color: #312e81;
+    }
+
+    .btn-secondary-glass {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 0.85rem 1.4rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        backdrop-filter: blur(8px);
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary-glass:hover {
+        background: rgba(255, 255, 255, 0.22);
+        transform: translateY(-2px);
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .games-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .stats-ribbon {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta-banner-glass {
+            flex-direction: column;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .cta-sub {
+            margin: 0 auto;
+        }
+
+        .cta-button-group {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .hero-title {
+            font-size: 2.4rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .stats-ribbon {
+            grid-template-columns: 1fr;
+        }
+
+        .filter-toolbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .filter-buttons {
+            width: 100%;
+        }
+
+        .game-media-container {
+            height: 260px;
+        }
+
+        .avatar-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+        }
+
+        .icon-avatar-wrap {
+            top: -36px;
+            left: 1.25rem;
+        }
+
+        .game-body {
+            padding: 3rem 1.25rem 1.5rem 1.25rem;
+        }
+
+        .cta-button-group {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .btn-primary-solid, .btn-secondary-glass {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>

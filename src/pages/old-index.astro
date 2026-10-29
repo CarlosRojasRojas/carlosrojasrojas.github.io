@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import HeroImage from '../components/HeroImage.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import nbaClashGameplay from '../assets/Images/nba-clash-gameplay.jpeg';
+import nbaClashGameplayTwo from '../assets/Images/nba-clash-gameplay-2.jpeg';
+import royalDefendersBanner from '../assets/Images/royal-defenders-banner.jpg';
+import royalDefendersGameplay from '../assets/Images/royal-defenders-gameplay.png';
+import bloodBrothersGameplay from '../assets/Images/bb2-gameplay.jpeg';
+import bloodBrothersIcon from '../assets/Images/bb2-icon.jpeg';
+import starWarsGameplay from '../assets/Images/sw-galactic-defense-gameplay.jpeg';
+import starWarsIcon from '../assets/Images/sw-galactic-defense-icon.jpg';
+
+const pageTitle = 'Home (Original Archive) | My Portfolio';
+---
+
+<Layout title={pageTitle} currentPath="/old-index">
+
+	<div style="background: #374151; color: #f9fafb; padding: 0.5rem 1rem; text-align: center; font-size: 0.85rem;">
+		📦 <strong>Original Homepage Archive</strong> · <a href="/" style="color: #60a5fa; text-decoration: underline; margin-left: 0.5rem;">Return to New Default Home (/)</a>
+	</div>
+
+	<HeroImage 
+		title="Carlos Rojas Rojas" 
+		subtitle="Project Manager | Senior Data Analyst | Game Product Manager"
+		ctaText="View My Work"
+		ctaLink="#experience"
+	/>
+
+	<section class="section">
+		<div class="container">
+			<h2>About Me</h2>
+			<p>
+				Project Manager and Tech Team Lead with 15+ years of experience in analytical projects and software development.
+				Achievement-oriented with high analytical capacity and proven self-learning abilities. Experienced in managing diverse teams and working with different methodologies including Scrum, Agile, and SAFe. Passionate about LiveOps, game development, data analytics, and building scalable solutions.
+			</p>
+		</div>
+	</section>
+
+	<section class="section bg-light" id="experience">
+		<div class="container">
+			<h2>Work Experience</h2>
+			<div class="experience-list">
+				<ExperienceCard 
+					title="LiveOps Product Manager"
+					company="Playstudios Chile SPA"
+					period="11/2024 - 03/2026"
+					description="In charge of Live Operations team for the Tetris Mobile App product."
+					highlights={[
+						"Increased ARPU from 0.12 to 0.14 after content planning and cadencing improvements",
+						"Performed analytical reports and A/B Testing Design for LiveOps features",
+						"Created Fnew features proposals and game economy tuning",
+						"Worked with Marketing to coordinate social campaigns"
+					]}
+					images={[
+					{ url: "Images/TetrisIcon.jpeg", alt: "Tetris Mobile", link: "https://www.playstudios.com/tetris/" },
+					]}
+				/>
+				<ExperienceCard 
+					title="Senior Game Producer"
+					company="Globant"
+					period="07/2021 - 10/2024"
+					description="In charge of Live Operations and Analytics for different gaming projects."
+					highlights={[
+						"Owned content planning and delivery, plus Analytical Reporting for NBA Clash (2021-2022)",
+						"Content planning, feature proposals and economy design for LaLiga Land of Goals",
+						"Content production and features for AEW Figure Fighters"
+					]}
+					images={[
+						{ url: "Images/nbaClashIcon.png", alt: "NBA Clash", link: "https://www.youtube.com/watch?v=UFlPVdTDWwk" },
+						{ url: "Images/LandOfGoalsIcon.jpeg", alt: "LaLiga Land of Goals", link: "https://globant.com/games" },
+						{ url: "Images/AEWFFLogo.jpg", alt: "AEW Figure Fighters", link: "https://globant.com" }
+					]}
+				/>
+				<ExperienceCard 
+					title="Project Manager"
+					company="KPMG Auditores Consultores SPA"
+					period="05/2019 - 06/2021"
+					description="Manager of a development team for internal and external analytical solutions."
+					highlights={[
+						"Development of KPMG Datax Tax System",
+						"Development of client portal conciliacionautos.cl",
+						"Development of client portal devolucionseguros.cl",
+						"Managed cloud infrastructure and stakeholder meetings"
+					]}
+					images={[]}
+				/>
+				<ExperienceCard 
+					title="Senior Machine Learning Engineer"
+				company="BCI Bank"
+				period="06/2017 - 04/2019"
+				description="Data Analytics and AI research projects, ETL pipeline development in Data Lake."
+				highlights={[
+					"Development of the bank's first financial chatbot",
+					"Development of Gmail extensions for automatic email reading",
+					"Different visualization tools for financial data"
+				]}
+				images={[]}
+				/>
+				<ExperienceCard 
+				title="Game Analytics and Design Director"
+				company="DeNA Santiago"
+				period="09/2014 - 10/2016"
+				description="Led a team of 12 people - game designers and data analysts."
+				highlights={[
+					"Automatization of BI reports using Google Big Query",
+					"Brought Live Operations capabilities to Chile office",
+					"Board of Directors placement at DeNA Santiago Studio"
+				]}
+				images={[
+					{ url: starWarsIcon.src, alt: "Star Wars Galactic Defense icon" },
+					{ url: starWarsGameplay.src, alt: "Star Wars Galactic Defense gameplay" },
+					{ url: bloodBrothersIcon.src, alt: "Blood Brothers 2 icon" },
+					{ url: bloodBrothersGameplay.src, alt: "Blood Brothers 2 gameplay" }
+					]}
+				/>
+				<ExperienceCard 
+					title="Senior Data Analyst"
+					company="Atakama Labs / DeNA Santiago"
+					period="08/2012 - 08/2014"
+					description="Data analysis for games, targeted to increase revenue and provide insights."
+					highlights={[
+						"Revenue improvement using data analytics tools",
+						"Provided feedback to game designers for product improvement",
+						"Supported live operations data updates"
+					]}
+					images={[
+						 { url: royalDefendersBanner.src, alt: "Royal Defenders banner" },
+						{ url: royalDefendersGameplay.src, alt: "Royal Defenders gameplay" }
+					]}
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<h2>Skills & Technologies</h2>
+			<div class="skills-grid">
+				<div class="skill-group">
+					<h3>Programming Languages</h3>
+					<ul>
+						<li>Python</li>
+						<li>C# & .NET</li>
+						<li>R</li>
+						<li>JavaScript / NodeJS</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Databases & Data</h3>
+					<ul>
+						<li>SQL Server / Oracle / PostgreSQL</li>
+						<li>MongoDB / DocumentDB</li>
+						<li>Hadoop / Google Big Query</li>
+						<li>ETL Pipeline Development</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Data Visualization & BI</h3>
+					<ul>
+						<li>Tableau Desktop / Server</li>
+						<li>Google Analytics</li>
+						<li>A/B Testing & Analytics</li>
+						<li>Business Intelligence</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Web Development</h3>
+					<ul>
+						<li>React</li>
+						<li>Angular</li>
+						<li>Django / Django Rest</li>
+						<li>Node.js / Express</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Methodologies & Certifications</h3>
+					<ul>
+						<li>Scrum, Agile, SAFe</li>
+						<li>Azure AZ900</li>
+						<li>Google Cloud Digital Leader</li>
+						<li>Project Management</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Tools & Platforms</h3>
+					<ul>
+						<li>Git / SVN</li>
+						<li>Docker</li>
+						<li>AWS</li>
+						<li>DevOps & CI/CD</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.section {
+		padding: 4rem 2rem;
+	}
+
+	.section.bg-light {
+		background-color: #f3f4f6;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		color: #1f2937;
+	}
+
+	h2::after {
+		content: '';
+		display: block;
+		width: 100px;
+		height: 4px;
+		background: linear-gradient(90deg, #667eea, #764ba2);
+		margin-top: 0.5rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #4b5563;
+		margin-bottom: 2rem;
+	}
+
+	.experience-list {
+		margin-top: 2rem;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.skill-group {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.skill-group h3 {
+		color: #667eea;
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+	}
+
+	.skill-group ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.skill-group li {
+		color: #4b5563;
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.skill-group li:before {
+		content: '✓';
+		color: #667eea;
+		position: absolute;
+		left: 0;
+		font-weight: bold;
+	}
+
+	@media (max-width: 768px) {
+		h2 {
+			font-size: 1.75rem;
+		}
+
+		.section {
+			padding: 2rem 1rem;
+		}
+	}
+</style>
